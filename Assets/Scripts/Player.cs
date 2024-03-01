@@ -1,15 +1,14 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : ShootableTank
 {
+    private float _timer;
+    
     protected override void Move()
     {
         var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-        _rigidbody.velocity = direction.normalized * _movementSpeed;
+        Rigidbody.velocity = direction.normalized * movementSpeed;
     }
 
     private void Update()
@@ -17,9 +16,19 @@ public class Player : ShootableTank
         Move();
         SetAngle(Camera.main.ScreenToWorldPoint(Input.mousePosition));
 
-        if (Input.GetMouseButton(0))
+        if (_timer <= 0)
         {
+            if (!Input.GetMouseButton(0))
+            {
+                return;
+            }
+            
             Shoot();
+            _timer = reloadTime;
+        }
+        else
+        {
+            _timer -= Time.deltaTime;
         }
     }
 }

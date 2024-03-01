@@ -1,20 +1,19 @@
-using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public abstract class Tank : MonoBehaviour
 {
-    [SerializeField] private int _maxHealth = 30;
-    [SerializeField] protected float _movementSpeed = 3f;
-    [SerializeField] protected float _angleOffset = 90f;
-    [SerializeField] protected float _rotationSpeed = 7f;
-    protected Rigidbody2D _rigidbody;
+    [SerializeField] private int maxHealth = 30;
+    [SerializeField] protected float movementSpeed = 3f;
+    [SerializeField] protected float angleOffset = 90f;
+    [SerializeField] protected float rotationSpeed = 7f;
+    protected Rigidbody2D Rigidbody;
     private int _currentHealth;
 
     private void Start()
     {
-        _currentHealth = _maxHealth;
-        _rigidbody = GetComponent<Rigidbody2D>();
+        _currentHealth = maxHealth;
+        Rigidbody = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(int damage)
@@ -33,7 +32,7 @@ public abstract class Tank : MonoBehaviour
     {
         var deltaPosition = target - transform.position;
         var angleZ = Mathf.Atan2(deltaPosition.y, deltaPosition.x) * Mathf.Rad2Deg;
-        var angle = Quaternion.Euler(0f, 0f, angleZ + _angleOffset);
-        transform.rotation = Quaternion.Lerp(transform.rotation, angle, Time.deltaTime * _rotationSpeed);
+        var angle = Quaternion.Euler(0f, 0f, angleZ + angleOffset);
+        transform.rotation = Quaternion.Lerp(transform.rotation, angle, Time.deltaTime * rotationSpeed);
     }
 }

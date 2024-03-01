@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class ShootableTank : Tank
 {
-    [SerializeField] private GameObject _projectile;
-    [SerializeField] private Transform _shootPoint;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform shootPoint;
+    [SerializeField] protected float reloadTime = 0.5f;
 
     protected void Shoot()
     {
-        Instantiate(_projectile, _shootPoint.position, transform.rotation);
+        Instantiate(projectile, shootPoint.position, transform.rotation);
     }
 }
