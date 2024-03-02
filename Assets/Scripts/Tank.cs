@@ -10,7 +10,7 @@ public abstract class Tank : MonoBehaviour
     protected Rigidbody2D Rigidbody;
     private int _currentHealth;
 
-    private void Start()
+    protected virtual void Start()
     {
         _currentHealth = maxHealth;
         Rigidbody = GetComponent<Rigidbody2D>();

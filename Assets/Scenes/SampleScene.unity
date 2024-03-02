@@ -978,7 +978,10 @@ PrefabInstance:
     - {fileID: 7303877871780185626, guid: 2adfac8eeacaa624dbca55e8bdd6c09f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7303877871780185607, guid: 2adfac8eeacaa624dbca55e8bdd6c09f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1504231307}
   m_SourcePrefab: {fileID: 100100000, guid: 2adfac8eeacaa624dbca55e8bdd6c09f, type: 3}
 --- !u!1 &476048807
 GameObject:
@@ -3869,7 +3872,6 @@ GameObject:
   - component: {fileID: 791611159}
   - component: {fileID: 791611158}
   - component: {fileID: 791611161}
-  - component: {fileID: 791611160}
   m_Layer: 0
   m_Name: PlayerTank
   m_TagString: Player
@@ -4018,24 +4020,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &791611160
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791611154}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c74b3648943d446a8334efa8f219805, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _maxHealth: 30
-  _movementSpeed: 3
-  _angleOffset: 90
-  _rotationSpeed: 7
-  _projectile: {fileID: 0}
-  _shootPoint: {fileID: 1883378338}
 --- !u!114 &791611161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4048,12 +4032,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c74b3648943d446a8334efa8f219805, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 30
-  _movementSpeed: 3
-  _angleOffset: 90
-  _rotationSpeed: 7
-  _projectile: {fileID: 0}
-  _shootPoint: {fileID: 0}
+  maxHealth: 30
+  movementSpeed: 3
+  angleOffset: 90
+  rotationSpeed: 7
+  projectile: {fileID: 7498862330463900419, guid: f6f0ab84a05077249834c81e2940c9b3, type: 3}
+  shootPoint: {fileID: 1883378338}
+  reloadTime: 0.5
 --- !u!1 &818895621
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,6 +5237,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 505062125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1504231306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7303877871780185607, guid: 2adfac8eeacaa624dbca55e8bdd6c09f, type: 3}
+  m_PrefabInstance: {fileID: 398469536}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1504231307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1504231306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e336bfb12094ffbb4e0e6cbf4abd1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 10
+  movementSpeed: 2
+  angleOffset: 90
+  rotationSpeed: 3
+  damage: 5
 --- !u!1 &1527316252
 GameObject:
   m_ObjectHideFlags: 0
