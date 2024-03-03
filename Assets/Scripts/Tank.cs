@@ -4,6 +4,7 @@ using UnityEngine;
 public abstract class Tank : MonoBehaviour
 {
     [SerializeField] private int maxHealth = 30;
+    [SerializeField] private int points = 0;
     [SerializeField] protected float movementSpeed = 3f;
     [SerializeField] protected float angleOffset = 90f;
     [SerializeField] protected float rotationSpeed = 7f;
@@ -22,6 +23,7 @@ public abstract class Tank : MonoBehaviour
 
         if (_currentHealth <= 0)
         {
+            Stats.Score += points;
             Destroy(gameObject);
         }
     }
