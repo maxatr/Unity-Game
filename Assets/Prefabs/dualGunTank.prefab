@@ -173,12 +173,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 20
+  points: 100
   movementSpeed: 2
   angleOffset: 90
   rotationSpeed: 7
   projectile: {fileID: 7498862330463900419, guid: b4baca0bbe1ef9946835186d46a688bd, type: 3}
-  shootPoint: {fileID: 0}
-  reloadTime: 0.5
+  shootPoint: {fileID: 713233193215658229}
+  reloadTime: 0.8
   distanceToPlayer: 7
 --- !u!1 &713233193215658228
 GameObject:
