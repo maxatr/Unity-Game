@@ -10,7 +10,7 @@ public class RangeTank : ShootableTank
     {
         base.Start();
 
-        _target = GameObject.FindGameObjectWithTag("Player").transform;
+        _target = FindObjectOfType<Player>().transform;
     }
 
     protected override void Move()

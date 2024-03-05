@@ -10,11 +10,10 @@ public class TankSpawner : MonoBehaviour
     
     private void Start()
     {
-
         StartCoroutine(SpawnTank());
     }
 
-    IEnumerator SpawnTank()
+    private IEnumerator SpawnTank()
     {
         while (true)
         {
@@ -24,10 +23,5 @@ public class TankSpawner : MonoBehaviour
 
             yield return new WaitForSeconds(spawnTime);
         }
-    }
-
-    private void Update()
-    {
-        
     }
 }

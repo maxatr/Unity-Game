@@ -18,9 +18,7 @@ public class Player : ShootableTank
 
     protected override void Move()
     {
-        var direction = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        Rigidbody.velocity = direction.normalized * movementSpeed;
+        transform.Translate(Vector2.down * (Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime));
     }
 
     private void Update()
