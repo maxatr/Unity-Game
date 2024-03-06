@@ -13,7 +13,7 @@ public class Projectile : MonoBehaviour
         if (tank != null && collision.gameObject.tag != myTag)
         {
             tank.TakeDamage(damage);
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

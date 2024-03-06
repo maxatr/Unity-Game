@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,6 +14,14 @@ public class ObjectPooler : MonoBehaviour
 
     public List<Pool> pools;
     public Dictionary<string, Queue<GameObject>> poolDictionary;
+
+    public static ObjectPooler Instance;
+
+    public void Awake()
+    {
+        Instance = this;
+    }
+
 
     public GameObject SpawnFromPool(string tagName, Vector3 position, Quaternion rotation)
     {
@@ -33,6 +42,8 @@ public class ObjectPooler : MonoBehaviour
 
     private void Start()
     {
+        poolDictionary = new Dictionary<string, Queue<GameObject>>();
+        
         foreach (var pool in pools)
         {
             var objectPool = new Queue<GameObject>();

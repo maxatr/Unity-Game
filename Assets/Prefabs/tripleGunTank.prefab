@@ -208,7 +208,7 @@ MonoBehaviour:
   movementSpeed: 1
   angleOffset: 90
   rotationSpeed: 3
-  projectile: {fileID: 7498862330463900419, guid: a5c5191c0959fca4295e6476edb2d63d, type: 3}
+  projectileTag: Red Big Projectile
   shootPoint: {fileID: 7177691318995417169}
   reloadTime: 0.5
   distanceToPlayer: 10
