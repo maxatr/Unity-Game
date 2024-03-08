@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 [CustomEditor(typeof(Inventory))]
@@ -35,5 +36,16 @@ public class InventoryEditor : Editor
         {
             _inventory.Items.Add(new Inventory.Item());
         }
+
+        if (GUI.changed)
+        {
+            SetObjectDirty(_inventory.gameObject);
+        }
+    }
+
+    public static void SetObjectDirty(GameObject obj)
+    {
+        EditorUtility.SetDirty(obj);
+        EditorSceneManager.MarkSceneDirty(obj.scene);
     }
 }
